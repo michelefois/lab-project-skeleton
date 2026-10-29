@@ -8,8 +8,8 @@ class CustomNet(nn.Module):
         # Define layers of the neural network
         self.conv1 = nn.Conv2d(3, 64, kernel_size=3, padding=1, stride=1)
 
-        self.conv2 = nn.Conv2d(64, 128, kernel_size=3, padding=1)
-        self.conv3 = nn.Conv2d(in_channels=128, out_channels=256, kernel_size=3, padding=1, stride=2)
+        self.conv2 = nn.Conv2d(64, 128, kernel_size=3, padding=1, stride=2)
+        self.conv3 = nn.Conv2d(128, 256, kernel_size=3, padding=1, stride=2)
         
         # Remove the flatten layer and use AdaptiveAvgPool2d to reduce the spatial dimensions to 1x1, 
         # keep the number of channels (256) and then use a fully connected layer to map to the number of classes (200 for TinyImageNet).
